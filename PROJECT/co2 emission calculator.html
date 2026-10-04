@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CO₂ Emissions Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <p class="eyebrow">Carbon footprint</p>
+        <h1>CO₂ Emission Calculator</h1>
+        <p class="subtitle">
+          Estimate your annual greenhouse gas emissions from home energy, travel,
+          and waste.
+        </p>
+      </header>
+
+      <section class="calculator-card">
+        <form id="calculator-form">
+          <div class="grid">
+            <label class="field">
+              <span>Electricity use (kWh)</span>
+              <input id="electricity" type="number" min="0" step="0.1" value="2500" />
+            </label>
+
+            <label class="field">
+              <span>Natural gas use (therms)</span>
+              <input id="gas" type="number" min="0" step="0.1" value="120" />
+            </label>
+
+            <label class="field">
+              <span>Petrol used (liters)</span>
+              <input id="petrol" type="number" min="0" step="0.1" value="300" />
+            </label>
+
+            <label class="field">
+              <span>Diesel used (liters)</span>
+              <input id="diesel" type="number" min="0" step="0.1" value="80" />
+            </label>
+
+            <label class="field">
+              <span>Flight distance (km)</span>
+              <input id="flight" type="number" min="0" step="1" value="2500" />
+            </label>
+
+            <label class="field">
+              <span>Waste generated (kg)</span>
+              <input id="waste" type="number" min="0" step="1" value="240" />
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="submit">Calculate</button>
+            <button type="reset" class="secondary">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results" aria-live="polite">
+        <div class="result-card primary">
+          <p class="label">Total CO₂ emissions</p>
+          <h2 id="total-emissions">0 kg</h2>
+        </div>
+
+        <div class="result-card">
+          <p class="label">Equivalent to</p>
+          <h3 id="equivalent">0 trees</h3>
+        </div>
+
+        <div class="result-card">
+          <p class="label">Annual driving</p>
+          <h3 id="car-equivalent">0 km</h3>
+        </div>
+      </section>
+
+      <section class="breakdown">
+        <h3>Breakdown</h3>
+        <ul id="breakdown-list"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
